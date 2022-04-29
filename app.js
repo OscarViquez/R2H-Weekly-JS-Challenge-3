@@ -11,16 +11,19 @@ const add100 = money => money + 100;
 //3 Create an arrow function that takes TWO arguments, a string and a single letter.  The function will count the number of times the specified letter occurs in the string. **Not case sensitive
 // Examples:
 
-let countLetters = (textString, textLetter) => {
-    let numberOfTimes = 0;
+let countLetters = (firstParam, secondParam) => {
+    let firstParamArray = firstParam.toLowerCase().split('');
 
-    if (textString.toLowerCase().match(textLetter) === textLetter) {
-        numberOfTimes++
-    }
+    let count = 0;
 
-    console.log(numberOfTimes);
+    firstParamArray.forEach(outputResult => {
+        if (outputResult === secondParam) {
+            count += 1;
+          }
+    });
+
+    console.log(count);
 }
-
 
 countLetters('Hello my name is John', 'i'); // returns 1
 countLetters('Hello my name is John', 'h'); // returns 2
